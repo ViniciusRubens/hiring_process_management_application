@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hiring process management application</title>
+    <link rel="stylesheet" href="./static/styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Hiring process management application</h1>
+        
+        <form method="post" action="/predict">
+            <label for="english_exam">English proficiency</label>
+            <input type="text" id="english_exam" name="english_exam" placeholder="Type a value between 0 and 10" required>
+
+            <label for="iq_exam">Cognitive ability (IQ)</label>
+            <input type="text" id="iq_exam" name="iq_exam" placeholder="Type a value between 0 and 200" required>
+
+            <label for="aptitude_exam">Aptitude test result</label>
+            <input type="text" id="aptitude_exam" name="aptitude_exam" placeholder="Type a value between 0 and 100" required>
+
+            <input type="submit" value="Predict admission">
+        </form>
+        </br>
+        {% if result %}
+            <p><strong>{{result}}</strong></p>
+        {% endif %}
+    </div>
+</body>
+</html>
